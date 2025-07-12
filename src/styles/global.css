@@ -1,0 +1,18 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-heading: 'Geist Sans', 'sans-serif';
+
+  /* Tema claro */
+  --color-background: #ffffff;
+  --color-primary: #f2832fff;
+  --color-secondary: #f2600fff;
+
+  /* Tema oscuro */
+  --color-background-dark: #1a202c;
+  --color-primary-dark: #0c68d0ff;
+  --color-secondary-dark: #1f6da1;
+
+}

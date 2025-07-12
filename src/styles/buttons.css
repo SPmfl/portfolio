@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@reference "./global.css";
+
+.bs-btns {
+  @apply 
+    px-4 
+    border-b-2 
+    border-transparent 
+    hover:cursor-pointer 
+    hover:border-b-white
+    ;
+}

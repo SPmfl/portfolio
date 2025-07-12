@@ -1,0 +1,34 @@
+---
+import LanguageSelector from "@components/LanguageSelector.astro";
+import ThemeSelector from "@components/ThemeSelector.astro";
+
+import { getLangFromUrl, useTranslations, getTranslatedPath } from '@/i18n/utils'
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const items = [
+  { text: 'navbar.home', href: '#top' },
+  { text: 'navbar.experience', href: '#experience' },
+  { text: 'navbar.projects', href: '#projects' },
+  { text: 'navbar.contact', href: '#contact' }
+]
+
+---
+
+<header class="flex flex-col items-center z-10">
+  <nav
+    class="border-container fixed top-0 mt-6 !py-0 flex items-center justify-center rounded-4xl"
+  >
+    {
+      true &&
+        items.map((item: (typeof items)[0]) => (
+          <a href={item.href} class="mx-0 my-0 hidden md:block lg:block">
+            {t(item.text)}
+          </a>
+        ))
+    }
+    <LanguageSelector />
+
+    <ThemeSelector />
+  </nav>
+</header>

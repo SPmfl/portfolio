@@ -1,0 +1,87 @@
+---
+import { getLangFromUrl, useTranslations, getTranslatedPath } from '@/i18n/utils'
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<section id="hero" class="border-container flex items-center justify-center rounded-2xl">
+  <div class="h-full w-full gap-12 flex flex-col lg:flex-row items-center justify-center">
+
+    <div id="hero-words" class="lg:w-[40%] flex items-center justify-center text-4xl lg:text-5xl">
+      <!-- EAT: visible de 0s a 2s -->
+      <div>{t('hero.words.1')}</div>
+      <!-- SLEEP: visible de 2s a 4s -->
+      <div>{t('hero.words.2')}</div>
+      <!-- CODE: visible de 4s a 6s -->
+      <div>{t('hero.words.3')}</div>
+      <!-- REPEAT: visible de 6s a 8s -->
+      <div>{t('hero.words.4')}</div>
+    </div>
+
+    <div class="mt-4 flex h-fit lg:w-[60%] flex-col gap-2 lg:mt-0">
+      <div>
+        <h1>{t('hero.salute')} Matheo. 👋</h1>
+        <br />
+        <p>{t('hero.description')}</p>
+      </div>
+      <div class="mt-4 mb-2 flex items-center justify-center">
+        <a href="https://www.linkedin.com/in/matheo-franco-loaiza/" target="_blank" class="bs-btns">
+          {t('hero.cta')} 
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #hero-words {
+    position: relative;
+    width: 300px;
+    height: 100px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    line-height: 100px; /* Centra verticalmente */
+  }
+
+  #hero-words div {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    opacity: 0;
+    animation: wordCycle 8s infinite;
+  }
+
+  /* Animación para cada palabra */
+  #hero-words div:nth-child(1) {
+    animation-delay: 0s;
+  } /* EAT */
+  #hero-words div:nth-child(2) {
+    animation-delay: 2s;
+  } /* SLEEP */
+  #hero-words div:nth-child(3) {
+    animation-delay: 4s;
+  } /* CODE */
+  #hero-words div:nth-child(4) {
+    animation-delay: 6s;
+  } /* REPEAT */
+
+  /* Keyframes para el ciclo de palabras */
+  @keyframes wordCycle {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    } /* Fade in a los 0.8s */
+    25% {
+      opacity: 1;
+    } /* Visible hasta 2s */
+    35% {
+      opacity: 0;
+    } /* Fade out a los 2.8s */
+    100% {
+      opacity: 0;
+    }
+  }
+</style>

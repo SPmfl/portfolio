@@ -1,0 +1,112 @@
+---
+import '@styles/global.css'
+import '@styles/base.css'
+import '@styles/fonts.css'
+import '@styles/layout.css'
+import '@styles/buttons.css'
+
+interface Props {
+  title: string
+  description: string
+}
+
+import Navbar from '@components/navbar/Navbar.astro'
+import Footer from '@components/footer/Footer.astro'
+
+import IMG_LIGHT from '@/assets/theme-images/bg-lake.jpg'
+import IMG_DARK from '@/assets/theme-images/bg-lake-dark.png'
+
+const { title, description } = Astro.props
+import '@fontsource/geist-mono'
+import '@/styles/global.css'
+import { ClientRouter } from 'astro:transitions'
+import { SEO } from 'astro-seo'
+import { getLangFromUrl } from '@/i18n/utils'
+import { Image } from 'astro:assets'
+
+const lang = getLangFromUrl(Astro.url)
+---
+
+<!doctype html>
+<html lang={lang} class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <SEO
+      title={title}
+      titleTemplate="%s"
+      description={description}
+      canonical={Astro.url.toString()}
+      openGraph={{
+        basic: {
+          title: "Matheo's Portfolio",
+          type: 'website',
+          image: 'https://avatars.githubusercontent.com/u/117482391?v=4'
+        },
+        image: {
+          alt: "Matheo's Portfolio image"
+        },
+        optional: {
+          description: description
+        }
+      }}
+    />
+    <link rel="alternate" href={`${Astro.site}en/`} hreflang="en" />
+    <link rel="alternate" href={`${Astro.site}es/`} hreflang="es" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <ClientRouter />
+  </head>
+
+  <body>
+    <!-- class="relative  flex min-h-dvh max-w-[50%] items-center justify-center bg-black" -->
+    <Image
+      src={IMG_LIGHT}
+      format="jpg"
+      quality="high"
+      alt={'background image of a lake on sunlight'}
+      loading="eager"
+      class="fixed inset-0 -z-10 h-full w-full bg-contain bg-center bg-no-repeat opacity-55 blur-sm transition-opacity duration-700 ease-in-out lg:bg-cover dark:opacity-0"
+    />
+    <Image
+      src={IMG_DARK}
+      format="jpg"
+      quality="high"
+      alt={'background image of a lake on nightlight'}
+      loading="eager"
+      class="fixed inset-0 -z-10 h-full w-full bg-contain bg-center bg-no-repeat opacity-0 blur-sm transition-opacity duration-700 ease-in-out lg:bg-cover dark:opacity-100"
+    />
+    <!-- Contenido -->
+    <main
+      class="mobile-first relative z-0 mr-auto ml-auto grid min-h-dvh grid-cols-1 place-content-center place-items-center text-gray-100 mt-30 lg:mt-50"
+    >
+      <Navbar />
+      <slot />
+      <Footer />
+    </main>
+  </body>
+</html>
+
+<script>
+  checkDefaultTheme()
+
+  function checkDefaultTheme() {
+    let theme = localStorage.getItem('theme')
+    if (!theme) {
+      // Detecta preferencia del sistema
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        theme = 'dark'
+      } else {
+        theme = 'light'
+      }
+      localStorage.setItem('theme', theme)
+    }
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark')
+      localStorage.setItem('theme', 'dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+      localStorage.setItem('theme', 'light')
+    }
+  }
+</script>

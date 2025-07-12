@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+@reference "./global.css";
+
+html {
+  font-family: 'Geist Mono', monospace;
+  @apply scroll-smooth;
+}
+
+body {
+  @apply bg-black text-2xl antialiased;
+}
+
+* {
+  @apply focus:outline-none focus-visible:ring;
+}
