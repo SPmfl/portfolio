@@ -6,8 +6,7 @@
   "exclude": [
     "/",
     "/_astro/*",
-    "/favicon.svg",
-    "/og-image.jpg",
+    "/favicon.png",
     "/fonts/*",
     "/404",
     "/es/*"
