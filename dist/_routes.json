@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "include": [
+    "/_server-islands/*"
+  ],
+  "exclude": [
+    "/",
+    "/_astro/*",
+    "/favicon.svg",
+    "/og-image.jpg",
+    "/fonts/*",
+    "/404",
+    "/es/*"
+  ]
+}

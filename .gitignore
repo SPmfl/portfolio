@@ -1,5 +1,4 @@
 # build output
-dist/
 build/
 
 # generated types
@@ -20,3 +19,5 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+.vscode/
