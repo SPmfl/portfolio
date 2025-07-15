@@ -1,12 +1,56 @@
 ---
+import img1 from '@assets/ai-house.jpg'
+import img2 from '@assets/cat.jpg'
+import img3 from '@assets/fantasy.jpg'
+
+import ProjectCard from './ProjectCard.astro'
 import { getLangFromUrl, useTranslations, getTranslatedPath } from '@/i18n/utils'
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
+
+const projectsData = [
+  {
+    title: 'project one',
+    description: 'description project one',
+    textbutton: 'visit',
+    href: 'https://www.google.com',
+    img: 'https://source.unsplash.com/random/300x300/?2',
+    photo: img1
+  },
+  {
+    title: 'project two',
+    description: 'description project two',
+    textbutton: 'visit',
+    href: 'https://www.google.com',
+    img: 'https://source.unsplash.com/random/300x300/?2',
+    photo: img2
+  },
+  {
+    title: 'project three',
+    description: 'description project three',
+    textbutton: 'visit',
+    href: 'https://www.google.com',
+    img: 'https://source.unsplash.com/random/300x300/?2',
+    photo: img3
+  }
+]
 ---
 
 <section
   id="projects"
-  class="border-container flex w-full items-center justify-center rounded-2xl !border-none text-gray-800 dark:text-gray-100"
+  class="border-container flex w-full flex-col items-center justify-center rounded-2xl !border-none text-gray-800 dark:text-gray-100"
 >
-  <h2 class="text-2xl font-bold md:text-4xl">{t('projects.title')}</h2>
+  <h2 class="mb-6 text-2xl font-bold md:text-4xl">{t('projects.title')}</h2>
+  <div class="grid h-fit w-full grid-cols-1 gap-4 md:grid-cols-2">
+    {
+      projectsData.map((item: (typeof projectsData)[0]) => (
+        <ProjectCard
+          title={item.title}
+          description={item.description}
+          buttonLeyend={item.textbutton}
+          href={item.href}
+          imgPhoto={item.photo}/>
+      ))
+    }
+  </div>
 </section>
