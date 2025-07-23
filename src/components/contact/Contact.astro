@@ -1,7 +1,85 @@
 ---
-
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
-<section id="contact" class="min-w-[80vw] lg:min-w-lg bg-zinc-500/50 flex items-center justify-center-safe">
-  <div class="z-10 ">Contact!</div>
+<section
+  id="contact"
+  class="border-container flex min-w-[80vw] items-center justify-center-safe rounded-2xl lg:min-w-lg"
+>
+  <div class="container mx-auto space-y-6 p-6 text-center lg:space-y-8 lg:p-8">
+    <h2 class="text-3xl font-bold">{t('navbar.contact')}</h2>
+    <div class="flex flex-wrap justify-center lg:justify-between">
+      <a href="https://www.linkedin.com/in/matheo-franco-loaiza/" class="hover:cursor-pointer">
+        <svg
+          fill="#000000"
+          height="200px"
+          width="200px"
+          version="1.1"
+          id="Layer_1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="-143 145 512 512"
+          xml:space="preserve"
+          aria-label="LinkedIn"
+          class="mx-10 my-6 h-10 w-10 fill-current text-gray-400 md:mx-12 lg:m-0 dark:text-gray-600"
+        >
+          <title>LinkedIn</title>
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              d="M329,145h-432c-22.1,0-40,17.9-40,40v432c0,22.1,17.9,40,40,40h432c22.1,0,40-17.9,40-40V185C369,162.9,351.1,145,329,145z M41.4,508.1H-8.5V348.4h49.9V508.1z M15.1,328.4h-0.4c-18.1,0-29.8-12.2-29.8-27.7c0-15.8,12.1-27.7,30.5-27.7 c18.4,0,29.7,11.9,30.1,27.7C45.6,316.1,33.9,328.4,15.1,328.4z M241,508.1h-56.6v-82.6c0-21.6-8.8-36.4-28.3-36.4 c-14.9,0-23.2,10-27,19.6c-1.4,3.4-1.2,8.2-1.2,13.1v86.3H71.8c0,0,0.7-146.4,0-159.7h56.1v25.1c3.3-11,21.2-26.6,49.8-26.6 c35.5,0,63.3,23,63.3,72.4V508.1z"
+            ></path>
+          </g>
+        </svg>
+      </a>
+
+      <a href="https://github.com/SPmfl" class="hover:cursor-pointer">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          height="200px"
+          width="200px"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-label="Github"
+          class="mx-10 my-6 h-12 w-12 fill-current text-gray-400 md:mx-12 lg:m-0 dark:text-gray-600"
+        >
+          <title>Github</title>
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M12 2C6.475 2 2 6.475 2 12C2 16.425 4.8625 20.1625 8.8375 21.4875C9.3375 21.575 9.525 21.275 9.525 21.0125C9.525 20.775 9.5125 19.9875 9.5125 19.15C7 19.6125 6.35 18.5375 6.15 17.975C6.0375 17.6875 5.55 16.8 5.125 16.5625C4.775 16.375 4.275 15.9125 5.1125 15.9C5.9 15.8875 6.4625 16.625 6.65 16.925C7.55 18.4375 8.9875 18.0125 9.5625 17.75C9.65 17.1 9.9125 16.6625 10.2 16.4125C7.975 16.1625 5.65 15.3 5.65 11.475C5.65 10.3875 6.0375 9.4875 6.675 8.7875C6.575 8.5375 6.225 7.5125 6.775 6.1375C6.775 6.1375 7.6125 5.875 9.525 7.1625C10.325 6.9375 11.175 6.825 12.025 6.825C12.875 6.825 13.725 6.9375 14.525 7.1625C16.4375 5.8625 17.275 6.1375 17.275 6.1375C17.825 7.5125 17.475 8.5375 17.375 8.7875C18.0125 9.4875 18.4 10.375 18.4 11.475C18.4 15.3125 16.0625 16.1625 13.8375 16.4125C14.2 16.725 14.5125 17.325 14.5125 18.2625C14.5125 19.6 14.5 20.675 14.5 21.0125C14.5 21.275 14.6875 21.5875 15.1875 21.4875C17.1727 20.8173 18.8977 19.5415 20.1198 17.8395C21.3419 16.1376 21.9995 14.0953 22 12C22 6.475 17.525 2 12 2Z"
+              fill="text-gray-400 dark:text-gray-600"></path>
+          </g>
+        </svg>
+      </a>
+
+      <a href="mailto:matheo.franco.loaiza@gmail.com" class="hover:cursor-pointer">
+        <svg
+          viewBox="0 0 30 30"
+          version="1.1"
+          height="200px"
+          width="200px"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          aria-label="Email"
+          class="mx-10 my-6 flex h-12 w-12 items-center justify-center fill-current text-gray-400 md:mx-12 lg:m-0 dark:text-gray-600"
+        >
+          <title>Email</title>
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              d="M26,6H6C4.3,6,3,7.3,3,9v14c0,1.7,1.3,3,3,3h20c1.7,0,3-1.3,3-3V9C29,7.3,27.7,6,26,6z M24.7,20.2c0.4,0.4,0.5,1,0.1,1.4 C24.6,21.9,24.3,22,24,22c-0.2,0-0.5-0.1-0.7-0.2l-5.1-4.4l-1.6,1.4C16.5,18.9,16.2,19,16,19s-0.5-0.1-0.7-0.2l-1.6-1.4l-5.1,4.4 C8.5,21.9,8.2,22,8,22c-0.3,0-0.6-0.1-0.8-0.3c-0.4-0.4-0.3-1,0.1-1.4l4.9-4.2l-4.9-4.2c-0.4-0.4-0.5-1-0.1-1.4 c0.4-0.4,1-0.5,1.4-0.1l7.3,6.4l7.3-6.4c0.4-0.4,1-0.3,1.4,0.1c0.4,0.4,0.3,1-0.1,1.4L19.8,16L24.7,20.2z"
+            ></path>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </div>
 </section>

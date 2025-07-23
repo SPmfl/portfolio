@@ -6,6 +6,7 @@ export function getLangFromUrl(url: URL) {
 	return defaultLang
 }
 
+// ui keys ( en ,es, pt, fr, ... ) become the type of lang
 export function useTranslations(lang: keyof typeof ui) {
 	return function t(key: string) {
 		return getNestedValue(ui[lang], key) || getNestedValue(ui[defaultLang], key)

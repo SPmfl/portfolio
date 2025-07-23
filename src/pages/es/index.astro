@@ -1,8 +1,6 @@
 ---
-import { Image } from 'astro:assets'
 import Layout from '@/layouts/Layout.astro'
 import { getLangFromUrl, useTranslations } from '@/i18n/utils'
-import LanguageSelector from '@/components/LanguageSelector.astro'
 
 
 import Hero from '@components/hero/Hero.astro'
@@ -10,8 +8,6 @@ import Experience from '@components/experience/Experience.astro'
 import Projects from '@components/projects/Projects.astro'
 import Contact from '@components/contact/Contact.astro'
 
-import logo from '@/assets/logo.svg'
-import { Atom, Languages, LucideZap, Waves } from 'lucide-react'
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)

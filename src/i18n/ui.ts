@@ -28,11 +28,11 @@ export const ui = {
       contact: 'Contact'
     },
     hero: {
-      words:{
+      words: {
         '1': 'EAT',
         '2': 'SLEEP',
         '3': 'CODE',
-        '4': 'REPEAT' 
+        '4': 'REPEAT'
       },
       salute: 'Hi! I am',
       description: 'I work as a fullstack developer and I would like to help you.',
@@ -50,8 +50,19 @@ export const ui = {
         '6': 'I have worked on various freelance projects, including web development and software solutions.',
       }
     },
+    visit: 'visit',
     projects: {
-      title: 'Projects',
+      titles: {
+        '0': 'Projects',
+        '1': 'Southern Agro project',
+        '2': 'project 2',
+        '3': 'project 3',
+      },
+      descriptions: {
+        '1': 'This is a landing page for an Argentinian company using Astro, tailwindCSS and others',
+        '2': 'description project 2',
+        '3': 'description project 3',
+      }
     },
   },
   es: {
@@ -77,11 +88,11 @@ export const ui = {
       contact: 'Contacto'
     },
     hero: {
-      words:{
+      words: {
         '1': 'COMER',
         '2': 'DORMIR',
         '3': 'PROGRAMAR',
-        '4': 'REPETIR' 
+        '4': 'REPETIR'
       },
       salute: 'Hola! Soy',
       description: 'Trabajo como fullstack developer y me gustaría ayudarte.',
@@ -99,8 +110,19 @@ export const ui = {
         '6': 'Comienzo del desarrollo de soluciones web como freelance.',
       }
     },
+    visit: 'visitar',
     projects: {
-      title: 'Proyectos',
+      titles: {
+        '0': 'Proyectos',
+        '1': 'proyecto Southern Agro',
+        '2': 'proyecto 2',
+        '3': 'proyecto 3',
+      },
+      descriptions: {
+        '1': 'Esta es una landing page para una compañia Argentina usando Astro, tailwindCSS, internacionalización, entre otros.',
+        '2': 'descripción proyecto 2',
+        '3': 'descripción proyecto 3',
+      }
     },
   }
 }
