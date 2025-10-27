@@ -55,12 +55,12 @@ export const ui = {
       titles: {
         '0': 'Projects',
         '1': 'Southern Agro project',
-        '2': 'project 2',
+        '2': 'Security Works page',
         '3': 'project 3',
       },
       descriptions: {
         '1': 'This is a landing page for an Argentinian company using Astro, tailwindCSS and others',
-        '2': 'description project 2',
+        '2': 'This is a web page for an Argentinian security company using Astro, tailwindCSS and others',
         '3': 'description project 3',
       }
     },
@@ -115,12 +115,12 @@ export const ui = {
       titles: {
         '0': 'Proyectos',
         '1': 'proyecto Southern Agro',
-        '2': 'proyecto 2',
+        '2': 'Security Works page',
         '3': 'proyecto 3',
       },
       descriptions: {
-        '1': 'Esta es una landing page para una compañia Argentina usando Astro, tailwindCSS, internacionalización, entre otros.',
-        '2': 'descripción proyecto 2',
+        '1': 'Esta es una landing page para una compañia Argentina usando Astro, tailwindCSS, internacionalización, entre otros',
+        '2': 'Esta es una página web para una compañia Argentina suando Astro, tailwindCSS entre otros',
         '3': 'descripción proyecto 3',
       }
     },
