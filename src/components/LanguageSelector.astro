@@ -21,7 +21,7 @@ const { pathname } = url
 					lang
 				)
 				return (
-					<option value={value} selected={lang === currentLang}>
+					<option value={value} selected={lang === currentLang} class="text-black appearance-none bg-transparent ">
 						{languages[lang as keyof typeof languages]}
 					</option>
 				)
